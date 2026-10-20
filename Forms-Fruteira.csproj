@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,23 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiClient.cs" />
     <Compile Include="Estoque.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Estoque.Designer.cs">
       <DependentUpon>Estoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro-Fruta.cs">
+    <Compile Include="CadastroFrutaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro-Fruta.Designer.cs">
-      <DependentUpon>Cadastro-Fruta.cs</DependentUpon>
+    <Compile Include="CadastroFrutaForm.Designer.cs">
+      <DependentUpon>CadastroFrutaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EstoqueForm.cs" />
+    <Compile Include="ImagemHelper.cs" />
+    <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cadastro-Fruta.resx">
-      <DependentUpon>Cadastro-Fruta.cs</DependentUpon>
+    <EmbeddedResource Include="CadastroFrutaForm.resx">
+      <DependentUpon>CadastroFrutaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estoque.resx">
       <DependentUpon>Estoque.cs</DependentUpon>
@@ -76,6 +81,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
