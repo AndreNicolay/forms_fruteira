@@ -1,13 +1,10 @@
 ﻿// Estoque.cs
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace Forms_Fruteira
 {
@@ -17,6 +14,11 @@ namespace Forms_Fruteira
         private List<Produto> todos = new List<Produto>();
 
         private readonly ImageList miniaturas = new ImageList();
+
+        public Estoque()
+        {
+            InitializeComponent();
+
             miniaturas.ImageSize = new Size(48, 48);
             miniaturas.ColorDepth = ColorDepth.Depth32Bit;
             listView1.SmallImageList = miniaturas;   // as linhas ficam com 48px de altura
@@ -53,9 +55,9 @@ namespace Forms_Fruteira
                 Cursor = Cursors.Default;
             }
         }
-        {
+
         private void PreencherCategorias()
-        }
+        {
             comboBox1.Items.Clear();
             comboBox1.Items.Add("Todas");
 
@@ -65,14 +67,12 @@ namespace Forms_Fruteira
                 .Distinct()
                 .OrderBy(n => n);
 
-        private void Estoque_Load(object sender, EventArgs e)
-        {
-
             foreach (var nome in categorias)
                 comboBox1.Items.Add(nome);
+        }
 
         private void Filtrar()
-        }
+        {
             string nome = textBox1.Text.Trim();
             string categoria = comboBox1.SelectedItem as string;
 
@@ -82,7 +82,7 @@ namespace Forms_Fruteira
 
             MostrarNaLista(filtrados);
         }
-        {
+
         private void MostrarNaLista(IEnumerable<Produto> produtos)
         {
             listView1.BeginUpdate();
@@ -114,15 +114,13 @@ namespace Forms_Fruteira
             }
 
             listView1.EndUpdate();
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         // Os eventos abaixo continuam aqui porque o Designer os referencia.
         // Se apagar só o método, o projeto deixa de compilar (CS1061).
         private void textBox1_TextChanged(object sender, EventArgs e) { }
         private void textBox2_TextChanged(object sender, EventArgs e) { }
-}        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e) { }
     }
 }
