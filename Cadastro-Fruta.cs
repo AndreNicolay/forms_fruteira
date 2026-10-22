@@ -36,7 +36,7 @@ namespace Forms_Fruteira
         {
             // new cria a segunda tela na memória.
             // using garante que ela é liberada quando terminarmos.
-            using (EstoqueForm estoque = new EstoqueForm())
+            using (Estoque estoque = new Estoque())
             {
                 // Esconde o Cadastro para as duas telas não ficarem empilhadas.
                 this.Hide();
