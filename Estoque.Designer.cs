@@ -36,11 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.Fruta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Quantidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Validade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colFruta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colQuantidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colValidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colValor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(231, 24);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -110,15 +111,16 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Fruta,
-            this.Quantidade,
-            this.Validade,
-            this.Valor,
-            this.Tipo});
+            this.colFruta,
+            this.colQuantidade,
+            this.colValidade,
+            this.colValor,
+            this.colTipo});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
@@ -128,36 +130,36 @@
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            //this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // Fruta
+            // colFruta
             // 
-            this.Fruta.Text = "Fruta";
-            this.Fruta.Width = 204;
+            this.colFruta.Text = "Fruta";
+            this.colFruta.Width = 204;
             // 
-            // Quantidade
+            // colQuantidade
             // 
-            this.Quantidade.Text = "Quantidade";
-            this.Quantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Quantidade.Width = 155;
+            this.colQuantidade.Text = "Quantidade";
+            this.colQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colQuantidade.Width = 155;
             // 
-            // Validade
+            // colValidade
             // 
-            this.Validade.Text = "Validade";
-            this.Validade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Validade.Width = 174;
+            this.colValidade.Text = "Validade";
+            this.colValidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colValidade.Width = 174;
             // 
-            // Valor
+            // colValor
             // 
-            this.Valor.Text = "Valor";
-            this.Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Valor.Width = 138;
+            this.colValor.Text = "Valor";
+            this.colValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colValor.Width = 138;
             // 
-            // Tipo
+            // colTipo
             // 
-            this.Tipo.Text = "Tipo";
-            this.Tipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Tipo.Width = 200;
+            this.colTipo.Text = "Tipo";
+            this.colTipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.colTipo.Width = 200;
             // 
             // Estoque
             // 
@@ -189,10 +191,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Fruta;
-        private System.Windows.Forms.ColumnHeader Quantidade;
-        private System.Windows.Forms.ColumnHeader Validade;
-        private System.Windows.Forms.ColumnHeader Valor;
-        private System.Windows.Forms.ColumnHeader Tipo;
+        private System.Windows.Forms.ColumnHeader colFruta;
+        private System.Windows.Forms.ColumnHeader colQuantidade;
+        private System.Windows.Forms.ColumnHeader colValidade;
+        private System.Windows.Forms.ColumnHeader colValor;
+        private System.Windows.Forms.ColumnHeader colTipo;
     }
 }
